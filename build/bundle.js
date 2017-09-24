@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "build/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -70,7 +70,9 @@
 "use strict";
 
 
-var _sum = __webpack_require__(1);
+__webpack_require__(1);
+
+var _sum = __webpack_require__(4);
 
 var _sum2 = _interopRequireDefault(_sum);
 
@@ -80,6 +82,34 @@ console.log((0, _sum2.default)(1, 2));
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var smallImg = document.createElement('img');
+// 必须 require 进来
+smallImg.src = __webpack_require__(2);
+document.body.appendChild(smallImg);
+
+var bigImg = document.createElement('img');
+bigImg.src = __webpack_require__(3);
+document.body.appendChild(bigImg);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "imgs/small.d47cc6ad512fec37ad6e6b8a46ab20e9.jpg";
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "imgs/big.64d50a0ac7dc751b916f25b060e0a8b3.jpg";
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

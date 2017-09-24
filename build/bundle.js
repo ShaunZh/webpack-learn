@@ -67,22 +67,31 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
 
-var sum = __webpack_require__(1);
-console.log(sum(1,2));
 
+var _sum = __webpack_require__(1);
+
+var _sum2 = _interopRequireDefault(_sum);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log((0, _sum2.default)(1, 2));
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
-module.exports = function(a, b) {
-  return a + b
-}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-
-
+exports.default = function (a, b) {
+  return a + b;
+};
 
 /***/ })
 /******/ ]);

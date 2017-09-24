@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'), // 使用绝对路径输出文件夹
     filename: "bundle.js",  // 打包后输出文件的文件名
-    publicPath: 'build/'
+    publicPath: 'build/'    // 指定资源的搜索路径
   },
   module: {
     rules: [
@@ -31,6 +31,17 @@ module.exports = {
 	      name: 'imgs/[name].[hash].[ext]'
 	    }
 	  } 
+	]
+      },
+      {
+        test: /\.css$/,
+	use: ['style-loader',
+	  {
+	    loader: 'css-loader',
+	    options: {
+	      modules: true
+	    }
+	  }
 	]
       }
     ]

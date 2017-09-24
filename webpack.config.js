@@ -1,5 +1,7 @@
 
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 module.exports = {
   entry: './app/index.js',   //入口文件
   output: {
@@ -35,15 +37,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-	use: ['style-loader',
-	  {
+	// 使用ExtractTextPlugin 将css作为单独的文件打包输出
+	loader: ExtractTextPlugin.extract({
+	 // 必须这样写，否则会报错
+	  fallback: 'style-loader',
+	  use: [{
 	    loader: 'css-loader',
 	    options: {
 	      modules: true
 	    }
-	  }
-	]
-      }
+	  }]
+	})
+      },
     ]
-  }
+  },
+      // 插件列表
+      plugins: [
+        // 输出的文件路径
+	new ExtractTextPlugin('css/[name].[hash].css')
+      ]
+
 }

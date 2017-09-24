@@ -22,3 +22,5 @@
   使用的loader：`babel-core, babel-loader, babel-preset-env`
 
 - 使用url-loader对图片文件进行处理，主要是根据文件的内容，生成MD5的文件后缀名,
+
+- 使用css-loader和style-loader对css文件进行处理，并使用ExtractTextPlugin对css文件进行单独打包输出
